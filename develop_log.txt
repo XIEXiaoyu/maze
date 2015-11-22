@@ -1,0 +1,10 @@
+
+1. solve maze: according to the input, display corresponding symbols on the screen. For example, if I read a number 2, I need to display a ‘@‘ symbol, if I meet a 0, I need to display a ‘.’,  if I meet a number 1, I need to display a ‘X’ symbol. To sum up:
+2->@
+0-> .
+1->X
+3->$.
+
+2 .quickly review cPrimerPlus chapter 8 by examine examples.
+
+3. Use nested while loop to fetch characters from input(the input.txt file), and translate, terminate and go the next line when confronting newline character, and finally terminally when meet the EOF character. Use get char() to get read character and use putchar() to output the translated characters.
