@@ -7,4 +7,6 @@
 
 2 .quickly review cPrimerPlus chapter 8 by examine examples.
 
-3. Use nested while loop to fetch characters from input(the input.txt file), and translate, terminate and go the next line when confronting newline character, and finally terminally when meet the EOF character. Use get char() to get read character and use putchar() to output the translated characters.
+3. Use nested while loop to fetch characters from input(the input.txt file), and translate, terminate and go the next line when confronting newline character, and finally terminally when meet the EOF character. Use getchar() to get read character and use putchar() to output the translated characters.
+
+4. Not use getchar() as stated in item 3, but use cPrimerPlus 8.3 to open files rather than redirection operator like ‘<‘ or ‘>’.
