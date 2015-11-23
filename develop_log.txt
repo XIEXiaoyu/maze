@@ -12,3 +12,5 @@
 4. Not use getchar() as stated in item 3, but use cPrimerPlus 8.3 to open files rather than redirection operator like ‘<‘ or ‘>’.
 
 5. Now we try to do the following: given a intpu.txt which contains only one character and then output it to the screen with its corresponding mapping character. Then click the keyboard to transmit the outputted character into another character.
+
+6. use curses Library, #include <curese.h>. In function getmaxyx(wnd,y,x), y and x is determined by the size of my bash terminal. Normally it is 25 * 80, i.e, x is 80. If I zoomin the terminal, then y and x are changing accordingly. So I won't need to modify the default size of my ternimal. I just need to set conditions for my input.txt file to make sure that the rows and columns are not exceeding the size of the terminal. So I need to deal with the first line of my input.txt differently from the left rows.
