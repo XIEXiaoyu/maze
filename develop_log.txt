@@ -10,3 +10,5 @@
 3. Use nested while loop to fetch characters from input(the input.txt file), and translate, terminate and go the next line when confronting newline character, and finally terminally when meet the EOF character. Use getchar() to get read character and use putchar() to output the translated characters.
 
 4. Not use getchar() as stated in item 3, but use cPrimerPlus 8.3 to open files rather than redirection operator like ‘<‘ or ‘>’.
+
+5. Now we try to do the following: given a intpu.txt which contains only one character and then output it to the screen with its corresponding mapping character. Then click the keyboard to transmit the outputted character into another character.
