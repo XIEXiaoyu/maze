@@ -14,3 +14,9 @@
 5. Now we try to do the following: given a intpu.txt which contains only one character and then output it to the screen with its corresponding mapping character. Then click the keyboard to transmit the outputted character into another character.
 
 6. use the second example in file:///Users/xiejun/Downloads/Curses.pdf, the uptown() and main() to achieve move the curser. But how to achieve, for example, if the curser move to the right, and meet a ‘X’ symbol, then it will not have any effects, and the curser would stay at the original position?
+
+7. now we need to handle the input, reference 
+http://www.gsp.com/cgi-bin/man.cgi?section=3&topic=getyx,
+https://docs.python.org/2/library/curses.html,
+http://hughm.cs.ukzn.ac.za/~murrellh/os/notes/ncurses.html and 
+use getmouse()function.

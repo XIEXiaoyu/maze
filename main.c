@@ -8,7 +8,12 @@ int r, c, nrows, ncols;
 
 int main(void)
 {	
-	//
+	int starting_row;
+	int starting_col;
+
+	int current_row;
+	int current_col;
+
 	char fname[50];
 	printf("input file: ");
 	scanf("%s", fname);
@@ -46,6 +51,8 @@ int main(void)
 			else if(num == '2')
 			{
 				ch = '@';
+				starting_row = i;
+				starting_col = j;
 			}
 			else if(num == '0')
 			{
@@ -67,7 +74,41 @@ int main(void)
 	}
 	fclose(fp);
 
+	move(starting_row, starting_col);
+
 	// handle input
+	char stroke = getch();
+	getyx(wnd, current_row, current_col);
+	if(stroke == 'j')
+	{	
+		if(current_row != 0 && mvwgetch(wnd, current_row - 1, current_col) != 'X')
+		{
+			move(current_row - 1, current_col);
+		}
+	}
+	if(stroke == 'k')
+	{
+		if(current_row < rows && mvwgetch(wnd, current_row + 1, current_col) != 'X')
+		{
+			move(current_row + 1, current_col);
+		}
+	}
+	if(stroke ==  'l')
+	{
+		if(current_col != 0 && mvwgetch(wnd, current_row, current_col - 1) != 'X')
+		{
+			move(current_row, current_col - 1);
+		}
+	}
+	if(stroke == 'm')
+	{
+		if(current_col < cols && mvwgetch(wnd, current_row, current_col + 1) != 'X')
+		{
+			move(current_row, current_col + 1);
+		}
+	}
+
+
 
 	while(1){
 		ch = getch();
@@ -77,6 +118,7 @@ int main(void)
 			break;
 		}
 	}
+
 
 	// stop
 	endwin();
