@@ -77,49 +77,89 @@ int main(void)
 	move(starting_row, starting_col);
 
 	// handle input
-	char stroke = getch();
-	getyx(wnd, current_row, current_col);
-	if(stroke == 'j')
-	{	
-		if(current_row != 0 && mvwgetch(wnd, current_row - 1, current_col) != 'X')
-		{
-			move(current_row - 1, current_col);
-		}
-	}
-	if(stroke == 'k')
+	int success = 0;
+	while(success == 0)
 	{
-		if(current_row < rows && mvwgetch(wnd, current_row + 1, current_col) != 'X')
+		getyx(wnd, current_row, current_col);
+		char stroke = getch();
+		char des;
+		
+		if(stroke == 'j')
+		{	
+			des = mvinch(current_row - 1, current_col) & A_CHARTEXT;
+			if(current_row != 0 && des != 'X')
+			{
+				if(des == '$')
+				{
+					success = 1;
+				}
+				move(current_row - 1, current_col);
+			}
+			else
+			{
+				move(current_row, current_col);
+			}
+		}
+		if(stroke == 'k')
 		{
-			move(current_row + 1, current_col);
+			des = mvinch(current_row + 1, current_col) & A_CHARTEXT;
+			if(current_row < rows &&  des != 'X')
+			{
+				if(des == '$')
+				{
+					success = 1;
+				}				
+				move(current_row + 1, current_col);
+			}
+			else
+			{
+				move(current_row, current_col);
+			}
+		}
+		if(stroke ==  'l')
+		{
+			des = mvinch(current_row, current_col - 1) & A_CHARTEXT;
+			if(current_col != 0 &&  des != 'X')
+			{
+				if(des == '$')
+				{
+					success = 1;
+				}
+				move(current_row, current_col - 1);
+			}
+			else
+			{
+				move(current_row, current_col);
+			}
+		}
+		if(stroke == 'm')
+		{
+			des = mvinch(current_row, current_col + 1) & A_CHARTEXT;
+
+			if(current_col < cols &&  des != 'X')
+			{
+				if(des == '$')
+				{
+					success = 1;
+				}
+				move(current_row, current_col + 1);
+			}
+			else
+			{
+				move(current_row, current_col);
+			}
 		}
 	}
-	if(stroke ==  'l')
-	{
-		if(current_col != 0 && mvwgetch(wnd, current_row, current_col - 1) != 'X')
-		{
-			move(current_row, current_col - 1);
-		}
-	}
-	if(stroke == 'm')
-	{
-		if(current_col < cols && mvwgetch(wnd, current_row, current_col + 1) != 'X')
-		{
-			move(current_row, current_col + 1);
-		}
-	}
 
+	// while(1){
+	// 	ch = getch();
 
-
-	while(1){
-		ch = getch();
-
-		if( ch == 'q' )
-		{
-			break;
-		}
-	}
-
-
+	// 	if( ch == 'q' )
+	// 	{
+	// 		break;
+	// 	}
+	// }
+	
 	// stop
 	endwin();
 }
