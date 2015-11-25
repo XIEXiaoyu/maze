@@ -7,3 +7,5 @@ In the second line, number 1 means that it is a wall and can not be passed. Numb
 In the last line, number 3 means that it is the exit of maze.
 
 Requirements: j->up, k->down, l->left, m->right to move the curser.
+
+Main reference: http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Curses.pdf

@@ -20,3 +20,5 @@ http://www.gsp.com/cgi-bin/man.cgi?section=3&topic=getyx,
 https://docs.python.org/2/library/curses.html,
 http://hughm.cs.ukzn.ac.za/~murrellh/os/notes/ncurses.html and 
 use getmouse()function.
+
+8. Need to use .c .h file tomorrow.
